@@ -11,7 +11,8 @@
 </head>
 
 <body>
-    <div class="contanier">
+    <button>Open Dialog</button>
+    <div class="container container-hidden">
         <div class="m-dialog">
             <div class="m-dialog__header">
                 <div class="m-dialog__header-title">
@@ -28,6 +29,20 @@
             </div>
         </div>
     </div>
+    <script>
+        const button = document.querySelector("button");
+        const container = document.querySelector(".container");
+        // 열기 버튼 클릭 시
+        button.onclick = () => {
+            container.classList.remove("container-hidden");
+        };
+        // 배경 클릭 시 닫기
+        container.onclick = (e) => {
+            if (e.target === container) {
+                container.classList.add("container-hidden");
+            }
+        };
+    </script>
 </body>
 
 </html>
