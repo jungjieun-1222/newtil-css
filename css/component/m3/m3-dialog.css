@@ -1,46 +1,174 @@
+* {
+    font-family: 'Roboto',
+        'Segoe UI',
+        'Helvetica Neue',
+        Arial,
+        sans-serif;
+}
 
 .m-dialog {
     /* 공통 상수 초기화 */
     /* color */
-
     --dialog-bg: #ECE6F0;
     --dialog-btn-font-color: #6750A4;
     --dialog-header-font-color: #1D1B20;
     --dialog-content-font-color: #49454F;
+    --dialog-btn-hover-color: rgba(103, 80, 164, 0.08);
+    --dialog-btn-focus-color: rgba(103, 80, 164, 0.1);
+
+    /* 다크모드 */
+    --dialog-bg-dark: #2b2930;
+    --dialog-btn-font-color-dark: #d0bcff;
+    --dialog-header-font-color-dark: #e6e0e9;
+    --dialog-content-font-color-dark: #cac4d0;
+    --dialog-btn-hover-color-dark: rgba(208, 188, 255, 0.08);
+    --dialog-btn-focus-color-dark: rgba(208, 188, 255, 0.1);
+
 
     /* font size */
     --dialog-font-size-1: 24px;
+    /*제목*/
     --dialog-font-size-2: 14px;
+    /*내용*/
 
+    /* font weight */
     --dialog-font-weight-1: 400;
     --dialog-font-weight-2: 500;
 
     /* width, height */
     --dialog-width: 312px;
+    /* 맥시멈-미니멈으로 설정해야할까...논의 */
 
     --dialog-btn-content-height: 88px;
-    --dialog-btn-width: 85px; 
-    --dialog-btn-height: 48px; 
+    --dialog-btn-width: 85px;
+    --dialog-btn-height: 48px;
 
     /* radius */
     --dialog-radius: 28px;
 
     /* opacity */
     --dialog-opacity-1: 0.08;
+    /*hovered*/
     --dialog-opacity-2: 0.1;
+    /*focused, pressed*/
 
     /* padding */
     --dialog-padding-1: 24px;
     --dialog-padding-2: 16px;
-
+    --dialog-padding-3: 8px;
 
     /* 변수 */
 
-
 }
 
-/*  */
+/* 기본배경*/
 .m-dialog {
-    
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+/* 컨테이너 */
+.m-dialog-container {
+    background-color: var(--dialog-bg);
+    width: var(--dialog-width);
+    border-radius: var(--dialog-radius);
+    max-width: 90%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 헤더 */
+.m-dialog-header {
+    padding-top: var(--dialog-padding-1);
+    padding-inline: var(--dialog-padding-1);
+    padding-bottom: var(--dialog-padding-2);
+}
+
+.m-dialog-title {
+    font-size: var(--dialog-font-size-1);
+    font-weight: var(--dialog-font-weight-1);
+    color: var(--dialog-header-font-color);
+    line-height: 24px;
+    margin: 0;
+}
+
+/* 컨텐츠 */
+.m-dialog-content {
+    font-size: var(--dialog-font-size-2);
+    font-weight: var(--dialog-font-weight-2);
+    color: var(--dialog-content-font-color);
+    padding-inline: var(--dialog-padding-1);
+    padding-top: var(--dialog-padding-1);
+    padding-bottom: var(--dialog-padding-1);
+}
+
+/* 버튼 */
+.m-dialog-enabled {
+    display: flex;
+    justify-content: flex-end;
+    padding-inline: var(--dialog-padding-1);
+    padding-bottom: var(--dialog-padding-1);
+}
+
+.m-dialog-btn {
+    /* 버튼 스타일 */
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+
+    width: var(--dialog-btn-width);
+    height: var(--dialog-btn-height);
+    padding: 0 12px;
+    margin-left: var(--dialog-padding-3);
+
+    color: var(--dialog-btn-font-color);
+    font-size: var(--dialog-font-size-2);
+    font-weight: var(--dialog-font-weight-2);
+    line-height: var(--dialog-btn-height);
+
+    /* animation */
+    transition: background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 20px;
+}
+
+.m-dialog-btn:hover {
+    background-color: var(--dialog-btn-hover-color);
+}
+
+.m-dialog-btn:focus {
+    background-color: var(--dialog-btn-focus-color);
+}
+
+@media (prefers-color-scheme: dark) {
+    .m-dialog-container {
+        background-color: var(--dialog-bg-dark);
+    }
+
+    .m-dialog-title {
+        color: var(--dialog-header-font-color-dark);
+    }
+
+    .m-dialog-content {
+        color: var(--dialog-content-font-color-dark);
+    }
+
+    .m-dialog-btn {
+        color: var(--dialog-btn-font-color-dark);
+    }
+
+    .m-dialog-btn:hover {
+        background-color: var(--dialog-btn-hover-color-dark);
+    }
+
+    .m-dialog-btn:focus {
+        background-color: var(--dialog-btn-focus-color-dark);
+    }
 }
