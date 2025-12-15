@@ -54,37 +54,6 @@
 
 }
 
-@media (prefers-color-scheme: dark) {
-    .m-dialog {
-        background-color: var(--dialog-bg-dark);
-    }
-
-    .dialog-header {
-        color: var(--dialog-header-font-color-dark);
-    }
-
-    .dialog-content {
-        color: var(--dialog-content-font-color-dark);
-    }
-
-    .m-dialog-btn-action {
-        color: var(--dialog-btn-font-color-dark);
-    }
-
-    .m-dialog-btn-action:hover {
-        background-color: color-mix(in srgb, var(--dialog-btn-font-color-dark) 8%, transparent);
-    }
-
-    .m-dialog-btn-action:active {
-        background-color: color-mix(in srgb, var(--dialog-btn-active-bg-color-dark) 10%, transparent);
-    }
-
-    .m-dialog-btn-action:disabled {
-        background-color: color-mix(in srgb, var(--dialog-btn-disable-bg-color-dark) 10%, transparent);
-        color: color-mix(in srgb, var(--dialog-btn-disable-bg-color-dark) 38%, transparent);
-    }
-}
-
 /*  */
 .m-dialog {
     position: fixed;
@@ -161,4 +130,39 @@
 .m-dialog-btn-action:disabled {
     background-color: color-mix(in srgb, var(--dialog-header-font-color) 10%, transparent);
     color: color-mix(in srgb, var(--dialog-header-font-color) 38%, transparent);
+}
+
+@media (prefers-color-scheme: dark) {
+    .m-dialog {
+        background-color: var(--dialog-bg-dark);
+    }
+
+    .dialog-header {
+        color: var(--dialog-header-font-color-dark);
+    }
+
+    .dialog-content {
+        color: var(--dialog-content-font-color-dark);
+    }
+
+    .m-dialog-btn-action:enabled {
+        background-color: var(--dialog-bg-dark);
+    }
+
+    .m-dialog-btn-action {
+        color: var(--dialog-btn-font-color-dark);
+    }
+
+    .m-dialog-btn-action:hover {
+        background-color: color-mix(in srgb, var(--dialog-btn-font-color-dark) 8%, transparent);
+    }
+
+    .m-dialog-btn-action:active {
+        background-color: color-mix(in srgb, var(--dialog-btn-active-bg-color-dark) 10%, transparent);
+    }
+
+    .m-dialog-btn-action:disabled {
+        background-color: color-mix(in srgb, var(--dialog-btn-disable-bg-color-dark) 10%, transparent);
+        color: color-mix(in srgb, var(--dialog-btn-disable-bg-color-dark) 38%, transparent);
+    }
 }
