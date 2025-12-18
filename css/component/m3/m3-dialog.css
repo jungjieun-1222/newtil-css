@@ -118,8 +118,10 @@
     width: fit-content;
     height: fit-content;
 
-    /* backdrop */
-    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.4);
+    /* elevation level 3 (6dp) & backdrop */
+    box-shadow: 0px 4px 8px 3px rgba(0, 0, 0, 0.15),
+        0px 1px 3px 0px rgba(0, 0, 0, 0.3),
+        0 0 0 100vmax rgba(0, 0, 0, 0.4);
 
     /* moved from .modal-container */
     background: var(--dialog-bg-color);
